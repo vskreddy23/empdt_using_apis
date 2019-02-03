@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+.bg-1 {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+</style> -->
+{% extends "crud/base.html" %}
+{% block content %}
+
+<body>
+
+<h2 align="center">Login Form</h2>
+
+<div class="container-fluid">
+<div class="jumbotron bg-1">
+
+<form method="post" action="/loginview/">
+{% csrf_token %}
+  <div class="input-group" >
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input type="text" class="form-control" name="username" placeholder="Enter username">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+      <input type="password" class="form-control" name="password" placeholder="Enter Password">
+    </div>
+
+<div align="center">
+<div class="checkbox">
+<label><input type="checkbox"> Remember me</label>
+</div>
+  <button type="" class="btn btn-default">Login</button>
+<button type="reset" class="btn btn-default">Reset</button>
+</div>
+</form>
+</div>
+</div>
+</body>
+{% endblock %}
